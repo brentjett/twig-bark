@@ -40,7 +40,7 @@ add_filter('template_include', function($template) {
 	global $twig;
 
 	// IF DECLARED AS TWIG TEMPLATE Take over the templating process
-	if (true) {
+	if (is_twig_template($template)) {
 		$file = basename($template);
 		$template = $twig->loadTemplate($file);
 		$vars = array();
@@ -53,4 +53,19 @@ add_filter('template_include', function($template) {
 	}
 });
 
+function is_twig_template($path) {
+	$string = file_get_contents($path);
+
+	// check for {# enable_twig #} comment
+	/*
+	if (strpos($string, 'enable_twig') ) {
+		return true;
+	}*/
+
+	// check for {% open tag
+	if (strpos($string, "{%") ) {
+		return true;
+	}
+	return false;
+}
 ?>
