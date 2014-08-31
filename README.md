@@ -9,7 +9,7 @@ Bark uses the same template files that WordPress naturally selects (index.php, p
 
 To process a template file with twig, it should contain "{%" or "{{" opening tags. This is the simplies way, since you can't really do much with twig without those tokens. If by chance, you are using PHP to display a twig code example and want to prevent this template from being processed by the twig engine, add a php "disable_twig" comment in the file:
 
-```
+``` php
 <?php
 // This file contains twig syntax examples like {% this } or {{ this }} in it, but should not be processed by the twig engine.
 // Add the disable_twig PHP comment to prevent Twig from compiling the file.
