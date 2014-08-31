@@ -56,16 +56,15 @@ add_filter('template_include', function($template) {
 function is_twig_template($path) {
 	$string = file_get_contents($path);
 
-	// check for {# enable_twig #} comment
-	/*
-	if (strpos($string, 'enable_twig') ) {
-		return true;
-	}*/
-
 	/* disable_twig */
+	// disable_twig
+	$disable = false;
+	if (strpos($string, "/* disable_twig") || strpos($string, "// disable_twig")) {
+		$disable = true;
+	}
 
 	// check for {% open tag
-	if (strpos($string, "{%") ) {
+	if (strpos($string, "{%") !== false && !$disable ) {
 		return true;
 	}
 	return false;

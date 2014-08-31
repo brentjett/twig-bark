@@ -11,7 +11,8 @@ To process a template file with twig, it should contain "{%" or "{{" opening tag
 
 ``` php
 <?php
-// This file contains twig syntax examples like {% this } or {{ this }} in it, but should not be processed by the twig engine.
+// This file contains twig syntax examples like {% this } or {{ this }} in it, 
+// but should not be processed by the twig engine.
 // Add the disable_twig PHP comment to prevent Twig from compiling the file.
 /* disable_twig */
 ?>
