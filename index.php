@@ -62,6 +62,8 @@ function is_twig_template($path) {
 		return true;
 	}*/
 
+	/* disable_twig */
+
 	// check for {% open tag
 	if (strpos($string, "{%") ) {
 		return true;
