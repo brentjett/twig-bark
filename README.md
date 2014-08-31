@@ -49,6 +49,8 @@ Twig eliminates the need for before and after includes like get_header, get_foot
 </html>
 ```
 
+Blocks are areas in a template that can be overridden by another template that either extends or embeds this template. It gives a designer an easy way to include default content so a theme never looks empty, but with the expectation that it will be replaced by a more specific template later. Blocks are the primary feature that makes twig templates reusable. This is an example of a WordPress template (index.php) that extends the root template above (base.twig). Any block that is not overridden in this "child template" will have present the content from the parent template.
+
 ```twig
 // index.php
 {% extends "base.twig" %}
