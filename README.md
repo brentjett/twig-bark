@@ -62,4 +62,4 @@ Blocks are areas in a template that can be overridden by another template that e
 {% endblock %}
 ```
 
-In this example.
+In this example I'm replacing the "content" and "title" blocks, but leaving the rest of the base template as-is. This is a much better way to have a common root template across all of your template files than using get_header() and get_footer().

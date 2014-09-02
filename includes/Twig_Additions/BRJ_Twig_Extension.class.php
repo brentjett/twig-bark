@@ -19,8 +19,7 @@ class BRJ_Twig_Extension extends Twig_Extension {
 			'posts' => $wp_query->posts,
 			'post' => $post,
 			'stylesheet_directory' => get_stylesheet_directory(),
-			'theme_path' => '/wp-content/theme/twig-tester/',
-			'components_path' => ''
+			'theme_path' => '/wp-content/theme/twig-tester/'
 		);
 	}
 	
@@ -39,6 +38,7 @@ class BRJ_Twig_Extension extends Twig_Extension {
 
 			new Twig_SimpleFunction('sidebar', function($sidebar) {
 				dynamic_sidebar($sidebar);
+				// still working on twig_sidebar()
 			})
 		);
 	}
